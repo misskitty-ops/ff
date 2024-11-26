@@ -1,0 +1,22 @@
+stages:
+  - setup
+  - run
+
+setup_environment:
+  stage: setup
+  image: python:3.9
+  script:
+    - echo "VENOM done join @venompapa1010"
+
+run_script:
+  stage: run
+  image: python:3.9
+  script:
+    - pip install telebot flask aiogram python-telegram-bot pymongo
+    - chmod +x *
+    - start_time=$(date +%s)
+    - while [ $(($(date +%s) - $start_time)) -lt 21600 ]; do  # Run for 6 hours (21600 seconds)
+        python3 raj.py;
+        echo "Script executed at $(date)";
+      done
+    - echo "6 hours completed. Exiting..."
